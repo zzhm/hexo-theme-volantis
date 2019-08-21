@@ -4,11 +4,11 @@ info:
   docs: https://xaoxuu.com/wiki/material-x/
   cdn: # 把对应的那一行注释掉就使用本地的文件
     css:
-      style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.17/css/style.css
+      style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css
     js:
-      app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.17/js/app.js
-      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.17/js/search.js
-      volantis: https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1/js/volantis.min.js
+      app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js
+      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js
+      volantis: https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/js/volantis.min.js
 
 
 
@@ -43,6 +43,15 @@ avatar_placeholder: https://img.vim-cn.com/ae/2e0ffa7c770dbebba64f2f1770c29788a0
 # 日期格式 http://momentjs.com/docs/
 date_format: 'YYYY-MM-DD' # 文章发布日期的格式
 updated_date_format: 'll' # 文章更新日期的格式
+
+# 幻灯片
+backstretch:
+  position: cover  # cover: 封面背景   full: 整个网页背景
+  duration: 6000 # 持续时间（毫秒）
+  fade: 2500     # 渐变（毫秒）
+  images:
+    - https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg
+
 
 
 ############################### 自定义 ###############################
@@ -186,10 +195,22 @@ footer: '本站所有下载链接均标注文件来源，如果部分第三方�
 
 
 
-############################### 评论 ###############################
-# disqus_shortname: xaoxuu
-# livere_uid:
-# valine
+############################### 评论系统 ###############################
+# disqus_shortname: 要使用哪个请复制到根目录配置文件！
+# livere_uid: 要使用哪个请复制到根目录配置文件！
+# gitalk: 要使用哪个请复制到根目录配置文件！
+#   clientID: 你的clientID
+#   clientSecret: 你的clientSecret
+#   repo: 你的repo名
+#   owner: 你的GitHub名
+#   admin: [] 至少填写你的GitHub名
+# leancloud: 要使用哪个请复制到根目录配置文件！
+#   app_id: 你的appId
+#   app_key: 你的appKey
+
+
+############################### 杂项，请勿删除 ###############################
+#valine配置
 valine:
   enable: true # 如果你想用Valine评论系统，请设置enable为true
   volantis: true # 是否启用volantis版本（禁止匿名，增加若干贴吧、QQ表情）
@@ -201,16 +222,11 @@ valine:
   placeholder: Just Go Go~ # valine comment input placeholder(like: Please leave your footprints )
   avatar: mp # gravatar style https://valine.js.org/avatar
   pageSize: 10 # comment list page size
-  verify: false # valine verify code (true/false)
-  notify: false # valine mail notify (true/false)
+  verify: true # valine verify code (true/false)
+  notify: true # valine mail notify (true/false)
   lang: zh-cn
-  highlight: false
+  highlight: true
 
-
-
-
-
-############################### 杂项，请勿删除 ###############################
 # 搜索配置
 search:
   enable: true
