@@ -294,11 +294,11 @@ var customSearch;
 
 	$(function () {
 		setHeader();
-		setHeaderMenuSelection();
+		// setHeaderMenuSelection();
 		setHeaderMenuPhone();
 		setHeaderSearch();
-		setTocToggle();
-		setScrollAnchor();
+		// setTocToggle();
+		// setScrollAnchor();
 		setSearchService();
 		// $(".article .video-container").fitVids();
 
