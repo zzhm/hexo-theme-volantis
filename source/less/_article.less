@@ -333,7 +333,7 @@
     font-size: @fontsize_small;
     line-height: @lineheight_base;
     margin-top: @gap;
-    background: fade(darken(@theme_cardbg, 5%), 50%);
+    background: @color_bg_code_block;
     &.article-tags {
       // padding-top: 2*@gap;
       // background: transparent;
@@ -393,7 +393,7 @@
       width: 100%;
       padding: @gap/2;
       color: fade(@color_text_main, 70%);
-      background-color: fade(darken(@theme_cardbg, 5%), 50%);
+      background-color: @color_bg_code_block;
       border-radius: @border_radius;
       p{
         font-size: @fontsize_base;
@@ -489,6 +489,100 @@
   gray, .gray {
     color: #AAA;
   }
+
+  div.links-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    margin: .6em -@gap/2;
+    align-items: flex-start;
+    &.auto{
+      a{
+        padding-left: @gap;
+        padding-right: @gap;
+      }
+    }
+    &.fill{
+      a{
+        flex-grow: 1;
+        width: auto;
+      }
+    }
+    &.wide{
+      a{
+        width:~"calc(100%/2 - @{gap})" !important;
+      }
+    }
+    &:not(.auto){
+      a{
+        width:~"calc(100%/5 - @{gap})";
+        @media(max-width: @on_laptop){
+          width:~"calc(100%/4 - @{gap})";
+        }
+        @media(max-width: @on_pad){
+          width:~"calc(100%/3 - @{gap})";
+        }
+        @media(max-width: @on_phone){
+          width:~"calc(100%/2 - @{gap})";
+        }
+      }
+    }
+    a{
+      .enable-trans();
+      margin: @gap/2;
+      margin-top: ~"calc(@{gap}*1.25 + 32px)";
+      font-weight: bold;
+      display: flex;
+      justify-content: flex-start;
+      align-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-width: 120px;
+      line-height: @lineheight_base;
+      padding: @gap/2;
+      text-align: center;
+      font-size: @fontsize_small;
+      img{
+        width: 64px;
+        height: 64px;
+        margin: @gap @gap/2 @gap/4 @gap/2;
+        margin-top: ~"calc(-@{gap}*1.25 - 32px)";
+        border: 3px solid @theme_cardbg;
+        background: @color_text_in_header;
+        line-height: 60px;
+        font-size: 28px;
+      }
+      background: darken(@color_bg_code_block, 10%);
+      border-radius: 4px;
+      color: @color_text_main;
+      p{
+        margin: .2em 0;
+        font-weight: normal;
+        line-height: 1.2;
+        word-wrap: break-word;
+        &.title{
+          font-size: @fontsize_base;
+          font-weight: bold;
+          line-height: 1.3;
+        }
+      }
+      &:hover{
+        text-decoration: none;
+        background: @color_text_highlight;
+        color: @color_text_in_header;
+        img{
+          transform: scale(1.1) translateY(-8px);
+          box-shadow: @boxshadow_base_4;
+        }
+      }
+    }
+    &.circle > a > img{
+      border-radius: 50%;
+    }
+    &.rounded > a > img {
+      border-radius: 25%;
+    }
+  }
+
 }
 
 
@@ -504,11 +598,14 @@
   font-family:@fontfamily_code;
   line-height: @lineheight_base;
   border-radius: @border_radius_code_block;
-  border: 1px solid darken(@theme_cardbg, 10%);
+  border: 1px solid darken(@color_bg_code_block, 10%);
   .enable-trans();
   figcaption{
-    padding: @gap/4 @gap/2;
-    background-color: darken(@color_bg_code_block, 3%);
+    position: sticky;
+    left: 0;
+    padding: @gap/4 @gap/2 @gap/4 @gap/2;
+    background-color: darken(@color_bg_code_block, 5%);
+
   }
   table {
     td,th{
@@ -530,25 +627,27 @@
       text-align: right;
       border-width: 0;
       margin-left: 0;
-      background-color: darken(@color_bg_code_block, 3%);
+      position: sticky;
+      left: 0;
+      background-color: darken(@color_bg_code_block, 5%);
       pre{
           color: fade(@color_text_main, 80%);
       }
     }
     .code{
-        padding: @gap;
-        vertical-align: top;
-        background-color: transparent;
-        &:before{
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            color: fade(@color_text_main, 80%);
-            font-size: @fontsize_footnote;
-            padding: 4px 8px 0;
-            line-height: @lineheight_base;
-        }
+      padding: @gap;
+      vertical-align: top;
+      background-color: transparent;
+      &:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: fade(@color_text_main, 80%);
+        font-size: @fontsize_footnote;
+        padding: 4px 8px;
+        line-height: @lineheight_base;
+      }
     }
   }
 
@@ -665,6 +764,7 @@
 
 pre{
   // 行
+  line-height: @lineheight_base*1.1;
   .line{
     color: fade(@color_text_main, 90%);
   }
@@ -672,6 +772,7 @@ pre{
     background-color: fade(@color_mac_minimize, 40%);
     padding: 3px 8px 3px 0;
     border-radius: 2px;
+    width: 100%;
   }
   .title{
     color: @color_md_indigo;

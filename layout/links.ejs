@@ -3,6 +3,7 @@
   <article id="<%= page.layout %>" class="post white-box <%- theme.style.shadow.card ? 'card-shadow' : '' %> <%- theme.style.blur && theme.style.blur.body ? 'body-blur' : '' %> article-type-<%= page.layout %>" itemscope itemprop="blogPost">
     <%- partial('_partial/meta',{post:page, position:'header'}) %>
       <section class="article typo l_friends">
+        <%- page.excerpt %>
         <% if (page.links){ %>
           <% (page.links||[]).forEach(function(group){ %>
             <% if(group.items) { %>
@@ -34,6 +35,11 @@
                           <% }) %>
                           </div>
                         <% } %>
+                        <% if(item.desc){ %>
+                          <div class='friend-tags-wrapper'>
+                            <p class="tags"><%= item.desc %></p>
+                          </div>
+                        <% } %>
                       </div>
                     </a>
                   <% }) %>
@@ -43,7 +49,7 @@
           <% }) %>
         <% } %>
         <br><br>
-        <%- page.content %>
+        <%- page.more %>
       </section>
   </article>
 

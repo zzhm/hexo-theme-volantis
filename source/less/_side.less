@@ -26,6 +26,12 @@
   &.desktop{
     display: block;
   }
+  @media(max-width: @on_pad) {
+    display: none !important;
+    &.mobile{
+      display: block !important;
+    }
+  }
   @media(max-width: @on_phone) {
     width: ~"calc(100% - 2 * @{gap})";
     margin: @gap @gap 0 @gap;
@@ -49,15 +55,6 @@
     }
     span.name{
       margin-left: @gap/2;
-    }
-    .rightBtn{
-      color: @theme_main;
-      &:hover {
-        color: darken(@theme_main, 25%);
-        &.rotate90{
-          transform: rotate(90deg);
-        }
-      }
     }
   }
   .content{

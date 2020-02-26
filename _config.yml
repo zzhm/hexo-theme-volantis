@@ -1,27 +1,27 @@
 ############################### 主题基本信息 ###############################
 info:
   name: Volantis
-  version: 1.5.4
+  version: 1.6
   docs: https://xaoxuu.com/wiki/volantis/
   cdn: # 要使用CDN，请在根目录的config文件中写上 use_cdn: true
     css:
-      style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.33/css/style.css
+      style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.39/css/style.css
     js:
-      # app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.33/js/app.js
-      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.33/js/search.js
-      valine: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.33/js/valine.js
+      app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.39/js/app.js
+      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.39/js/search.js
+      valine: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.39/js/valine.js
 
 
 
 
-############################### 服务开关 ###############################
+############################### 第三方插件 ###############################
 # ⚠️ 注意：开启过多服务会导致网页加载缓慢、运行卡顿
-service:
+plugins:
   # jquery是很多功能的基础，请勿关闭
   jquery: '//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js'
   ################################################## 提升速度类的服务
-  # 鼠标放在链接上就提前开始加载了
-  instant_page: '//instant.page/3.0.0'
+  # 鼠标放在链接上就提前开始加载了 [站内的url一定要以‘/’结尾]
+  instant_page: 'https://instant.page/3.0.0'
   ################################################## 优化体验类的服务
   # 图片放大预览
   fancybox:
@@ -42,7 +42,7 @@ service:
   #   css: '//cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css'
   #   js: '//cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js'
   # 文本框打字机特效
-  comment_typing: '//cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.33/js/comment_typing.js'
+  comment_typing: '//cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.39/js/comment_typing.js'
 
 
 
@@ -76,8 +76,8 @@ backstretch:
   fade: 2500            # 渐变（毫秒）
   is_dark: #true        # 图片是否是暗色的（调整文字为白色）
   images:               # 我上传了一些高清壁纸到CDN中，仅限个人使用，商用后果自负！！！
-    - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg
     - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg
+    - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg
     - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg
     - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/00E0F0ED-9F1C-407A-9AA6-545649D919F4.jpeg
     # 下面这些建议 is_dark: true
@@ -108,15 +108,17 @@ backstretch:
 #     - name: 文档
 #       icon: fas fa-book
 #       url: getting-started/
+#     - name: 示例
+#       icon: fas fa-play-circle
+#       url: examples/
 #     - name: 源码
 #       icon: fas fa-code-branch
 #       url: https://github.com/xaoxuu/hexo-theme-material-x/
-#       rel: nofollow
+#       rel: external nofollow noopener noreferrer
 #       target: _blank
 #     - name: 鸣谢
 #       icon: fas fa-handshake
-#       url: contributors
-#       rel: nofollow
+#       url: contributors/
 
 
 # 导航栏
@@ -135,72 +137,48 @@ navbar:
     on_desktop:
       - name: 开始
         icon: fas fa-flag
-        url: getting-started
-        rel: nofollow
-        target: _self
+        url: getting-started/
       - name: 站点
         icon: fas fa-globe-asia
-        url: site-settings
-        target: _self
+        url: site-settings/
       - name: 主题
         icon: fas fa-palette
-        url: theme-settings
-        rel: nofollow
-        target: _self
+        url: theme-settings/
       - name: 页面
         icon: fas fa-file-alt
-        url: page-settings
-        rel: nofollow
-        target: _self
+        url: page-settings/
       - name: 书写
         icon: fas fa-pen-alt
-        url: tag-plugins
-        rel: nofollow
-        target: _self
+        url: tag-plugins/
       - name: 进阶
         icon: fas fa-flask
-        url: advanced-settings
-        rel: nofollow
-        target: _self
+        url: advanced-settings/
     # 手机端导航菜单（从右上角的按钮点击展开）
     on_mobile:
       - name: 开始
         icon: fas fa-flag
-        url: getting-started
-        rel: nofollow
-        target: _self
+        url: getting-started/
       - name: 站点
         icon: fas fa-globe-asia
-        url: site-settings
-        target: _self
+        url: site-settings/
       - name: 主题
         icon: fas fa-palette
-        url: theme-settings
-        rel: nofollow
-        target: _self
+        url: theme-settings/
       - name: 页面
         icon: fas fa-file-alt
-        url: page-settings
-        rel: nofollow
-        target: _self
+        url: page-settings/
       - name: 书写
         icon: fas fa-pen-alt
-        url: tag-plugins
-        rel: nofollow
-        target: _self
+        url: tag-plugins/
       - name: 进阶
         icon: fas fa-flask
-        url: advanced-settings
-        rel: nofollow
-        target: _self
-      - name: FAQ
+        url: advanced-settings/
+      - name: 帮助
         icon: fas fa-question-circle
-        url: faqs
-        rel: nofollow
+        url: faqs/
       - name: 鸣谢
         icon: fas fa-handshake
-        url: contributors
-        rel: nofollow
+        url: contributors/
   search: 搜索文档   # 搜索框文字
 
 
@@ -269,19 +247,19 @@ meta:
   share:
     - id: qq
       name: QQ好友
-      img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png
+      img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png
     - id: qzone
       name: QQ空间
-      img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png
+      img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png
     # - id: qrcode # 当id为qrcode时需要安装插件  npm i -S hexo-helper-qrcode
     #   name: 微信
-    #   img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png
+    #   img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png
     - id: weibo
       name: 微博
-      img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png
+      img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png
     # - id: qrcode # 当id为qrcode时需要安装插件  npm i -S hexo-helper-qrcode
     #   name: QRcode
-    #   img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png
+    #   img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qrcode.png
   # 链接
   links:
     repo: # 源码链接
@@ -340,7 +318,7 @@ widget:
     header:
       icon: fas fa-folder-open
       title: 文章分类
-      url: blog/categories/
+      url: /blog/categories/
   # ---------------------------------------
   # 标签云小部件配置
   - id: tagcloud
@@ -349,7 +327,7 @@ widget:
     header:
       icon: fas fa-tags
       title: 热门标签
-      url: blog/tags/
+      url: /blog/tags/
     min_font: 14
     max_font: 24
     color: true
@@ -385,14 +363,14 @@ widget:
     height: #64px  # 不设置则自动高度
     fancybox: #true # 是否允许点击放大
     images:
-      - https://img.vim-cn.com/a1/093847694418628874eaf837b6d01b0006bc2f.png
+      - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png
   # ---------------------------------------
   # ---------------------------------------
   # ---------------------------------------
   # 自定义组件，仿照如下写法
   - id: navigation
     class: grid
-    display: [desktop] # [desktop, mobile]
+    display: [desktop, mobile] # [desktop, mobile]
     header:
       icon: fas fa-map-signs
       title: 文档导航
@@ -405,9 +383,10 @@ widget:
         url: news/archives/
       - name: 常见问题
         icon: fas fa-question-circle
-        url: faqs
-        rel: external nofollow noopener noreferrer
-        target: _self
+        url: faqs/
+      - name: 示例博客
+        icon: fas fa-play-circle
+        url: examples/
       - name: 更新日志
         icon: fas fa-clipboard-list
         url: https://github.com/xaoxuu/hexo-theme-material-x/releases/
@@ -422,9 +401,9 @@ widget:
       url: https://github.com/xaoxuu/
     content:
       - '您的赞对我来说很重要，如果您喜欢本主题，希望能够给下面的项目点个赞来支持一下。'
-      - '[<img src="https://img.vim-cn.com/92/807ffd8bab40497971172514294020b6501074.png" height="50px">](https://github.com/xaoxuu/ProHUD)'
-      - '[<img src="https://img.vim-cn.com/d4/12de11f629bd1395a1a968eb23071d0fefa280.png" height="50px">](https://github.com/xaoxuu/ValueX)'
-      - '[<img src="https://img.vim-cn.com/12/1dd7852a36433f9efe3e11a7772bddcf68be72.png" height="50px">](https://github.com/xaoxuu/Inspire)'
+      - '[<img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/prohud/logo.png" height="50px">](https://github.com/xaoxuu/ProHUD)'
+      - '[<img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/valuex/logo.png" height="50px">](https://github.com/xaoxuu/ValueX)'
+      - '[<img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/inspire/logo.png" height="50px">](https://github.com/xaoxuu/Inspire)'
 
 
 # 社交信息配置
