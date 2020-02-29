@@ -6,7 +6,7 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           <% (post.photos||[]).forEach(function(photo){ %>
-            <fancybox><img src='<%- url_for(photo) %>'/></fancybox>
+            <fancybox><img src='<%- url_for_lang(photo) %>'/></fancybox>
           <% }) %>
           <%- post.content %>
           <% if(theme.layout.on_page.footer && (page.layout == 'post')){ %>
@@ -31,7 +31,7 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;<%- __('post.prev_page') %></h6>
                             <h4>
-                                <a href="<%=url_for(post.prev.path)%>" rel="prev" title="<%=post.prev.title%>">
+                                <a href="<%=url_for_lang(post.prev.path)%>" rel="prev" title="<%=post.prev.title%>">
                                   <% if(post.prev.title){ %>
                                       <%= post.prev.title %>
                                   <% } else if (post.prev.date) { %>
@@ -43,7 +43,7 @@
                                 <%
                                 var items = [];
                                 post.prev.tags.each(function(item){
-                                    items.push('<a class="tag" href="'+url_for(item.path)+'"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> ' + item.name + '</a>');
+                                    items.push('<a class="tag" href="'+url_for_lang(item.path)+'"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> ' + item.name + '</a>');
                                 });
                                 %>
                                 <h6 class="tags">
@@ -58,7 +58,7 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6><%- __('post.next_page') %>&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="<%=url_for(post.next.path)%>" rel="prev" title="<%=post.next.title%>">
+                                <a href="<%=url_for_lang(post.next.path)%>" rel="prev" title="<%=post.next.title%>">
                                     <% if(post.next.title){ %>
                                         <%= post.next.title %>
                                     <% } else if (post.next.date) { %>
@@ -70,7 +70,7 @@
                                 <%
                                 var items = [];
                                 post.next.tags.each(function(item){
-                                    items.push('<a class="tag" href="'+url_for(item.path)+'"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> ' + item.name + '</a>');
+                                    items.push('<a class="tag" href="'+url_for_lang(item.path)+'"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> ' + item.name + '</a>');
                                 });
                                 %>
                                 <h6 class="tags">

@@ -24,7 +24,7 @@
       <div class="social-wrapper">
         <% (theme.social||[]).forEach(function(value){ %>
           <% if (value.url && value.icon) { %>
-            <a href="<%- url_for(value.url) %>"
+            <a href="<%- value.url %>"
               class="social <%- value.icon %> flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">

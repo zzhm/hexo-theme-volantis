@@ -20,7 +20,7 @@
                 <div class='friend-content'>
                   <% (group.items||[]).forEach(function(item){ %>
                     <a class='friend-card' style='background:<%- item.backgroundColor %>; color:<%- item.textColor %>'
-                      target="_blank" rel="external nofollow noopener noreferrer" href='<%- url_for(item.url || '') %>'>
+                      target="_blank" rel="external nofollow noopener noreferrer" href='<%- item.url || '' %>'>
                       <div class='friend-left'>
                         <% if(item.avatar){ %>
                           <img class='avatar' src='<%- item.avatar %>'/>

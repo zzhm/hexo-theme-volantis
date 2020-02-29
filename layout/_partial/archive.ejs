@@ -1,42 +1,49 @@
 <% if (site.posts && site.posts.length > 0) { %>
   <section class="post-list <%- theme.layout.multiple_columns ? 'multiple-columns' : '' %>">
-    <% if (!page.prev) { %>
-      <% if (is_home()) { %>
-        <% site.posts.each(function(post){ %>
-          <% if (post.top) { %>
-            <% if (page.group == undefined || post.group == page.group) { %>
-              <div class='post-wrapper'>
-                <%- partial('post', {post: post}) %>
-              </div>
-            <% } %>
-          <% } %>
-        <% }) %>
-      <% } else if (page.posts && page.posts.length > 0) { %>
-        <% page.posts.each(function(post){ %>
-          <% if (post.top) { %>
+    <% if (is_home()) {
+      if (!page.prev) {
+        // 置顶的文章
+        site.posts.forEach(function(post){
+          if (post.top) { %>
             <div class='post-wrapper'>
               <%- partial('post', {post: post}) %>
-            </div>
-          <% } %>
-        <% }) %>
-      <% } %>
-    <% } %>
-    <% if (page.posts && page.posts.length > 0) { %>
-      <% page.posts.each(function(post){ %>
-        <% if (!post.top) { %>
+            </div> <%
+          }
+        })
+      }
+      if (page.posts && page.posts.length > 0) {
+        page.posts.forEach(function(post){
+          if (!post.top) { %>
+            <div class='post-wrapper'>
+              <%- partial('post', {post: post}) %>
+            </div> <%
+          }
+        })
+      }
+    } else {
+      // 其它页面想要展示首页内容（hexo只支持首页分页）
+      site.posts.forEach(function(post){
+        if (post.top) { %>
           <div class='post-wrapper'>
             <%- partial('post', {post: post}) %>
-          </div>
-        <% } %>
-      <% }) %>
-    <% } %>
+          </div> <%
+        }
+      })
+      site.posts.sort(config.index_generator.order_by).forEach(function(post){
+        if (!post.top) { %>
+          <div class='post-wrapper'>
+            <%- partial('post', {post: post}) %>
+          </div> <%
+        }
+      })
+    } %>
   </section>
   <% if (page && page.posts) { %>
     <% if (page.total > 1) { %>
       <br>
       <div class="prev-next">
         <% if (page.prev != 0) { %>
-          <a class="prev" rel="prev" href="<%= url_for(page.prev_link) %>">
+          <a class="prev" rel="prev" href="<%= url_for_lang(page.prev_link) %>">
             <section class="post prev white-box <%- theme.style.shadow.card ? 'card-shadow' : '' %> <%- theme.style.blur && theme.style.blur.widget ? 'widget-blur' : '' %>" >
               <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;<%- __('post.prev_page') %>&nbsp;
             </section>
@@ -46,7 +53,7 @@
           <%= page.current%> / <%= page.total%>
         </p>
         <% if (page.next != 0) { %>
-          <a class="next" rel="next" href="<%= url_for(page.next_link) %>">
+          <a class="next" rel="next" href="<%= url_for_lang(page.next_link) %>">
             <section class="post next white-box <%- theme.style.shadow.card ? 'card-shadow' : '' %> <%- theme.style.blur && theme.style.blur.widget ? 'widget-blur' : '' %>">
               &nbsp;<%- __('post.next_page') %>&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
             </section>

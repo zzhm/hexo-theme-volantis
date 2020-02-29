@@ -1,3 +1,12 @@
+<%
+function getURL(url) {
+  if (url.indexOf('://') < 0) {
+    return url_for_lang(url);
+  } else {
+    return url;
+  }
+}
+%>
 <header class="l_header<%- page.sidebar == false ? ' no_sidebar' : '' %> <%- theme.style.blur && theme.style.blur.navbar ? 'nav-blur' : '' %>">
   <div id="loading-bar-wrapper">
     <div id="loading-bar"></div>
@@ -5,7 +14,7 @@
 	<div class='wrapper'>
 		<div class="nav-main container container--flex">
       <% if (theme.navbar.logo) { %>
-        <a class="logo flat-box" target="_self" href='<%- url_for("/") %>' >
+        <a class="logo flat-box" target="_self" href='<%- getURL("/") %>' >
           <% if (theme.navbar.logo.img) { %>
             <img class='logo' src='<%- theme.navbar.logo.img %>'/>
           <% } else { %>
@@ -28,14 +37,14 @@
           <% if (theme.navbar.menu.on_desktop) { %>
   					<% (theme.navbar.menu.on_desktop || []).forEach(function(value){ %>
   						<li>
-								<a class="nav flat-box" href="<%= url_for(value.url) %>"
+								<a class="nav flat-box" href="<%= getURL(value.url) %>"
                   <% if (value.rel) { %>
                     rel="<%- value.rel %>"
                   <% } %>
                   <% if (value.target) { %>
                     target="<%- value.target %>"
                   <% } %>
-                  id="<%= url_for(value.url).replace(/\/|%/g, "")?url_for(value.url).replace(/\/|%/g, ""):"home" %>">
+                  id="<%= getURL(value.url).replace(/\/|%/g, "")?getURL(value.url).replace(/\/|%/g, ""):"home" %>">
 									<i class='<%= value.icon %> fa-fw'></i>&nbsp;<%= __('navbar.'+value.name) == ('navbar.'+value.name) ? value.name : __('navbar.'+value.name) %>
 								</a>
 							</li>
@@ -77,14 +86,14 @@
         <% if (theme.navbar.menu.on_mobile) { %>
           <% (theme.navbar.menu.on_mobile || []).forEach(function(value){ %>
             <li>
-							<a class="nav flat-box" href="<%= url_for(value.url) %>"
+							<a class="nav flat-box" href="<%= getURL(value.url) %>"
                 <% if (value.rel) { %>
                   rel="<%- value.rel %>"
                 <% } %>
                 <% if (value.target) { %>
                   target="<%- value.target %>"
                 <% } %>
-                id="<%= url_for(value.url).replace(/\/|%/g, "")?url_for(value.url).replace(/\/|%/g, ""):"home" %>">
+                id="<%= getURL(value.url).replace(/\/|%/g, "")?getURL(value.url).replace(/\/|%/g, ""):"home" %>">
 								<i class='<%= value.icon %> fa-fw'></i>&nbsp;<%= __('navbar.'+value.name) == ('navbar.'+value.name) ? value.name : __('navbar.'+value.name) %>
 							</a>
             </li>

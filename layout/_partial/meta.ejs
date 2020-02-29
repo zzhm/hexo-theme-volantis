@@ -37,7 +37,7 @@ if (post.meta && (post.meta.footer !== undefined && post.meta.footer !== null)) 
       <%- partial('../_third-party/aplayer', {post: post, where: 'meta'}) %>
     <% } %>
     <% if(post.thumbnail && post.thumbnail.length){ %>
-      <a title='<%- post.title %>' href='<%- url_for(post.link || post.path) %>'><img class='thumbnail' src='<%- post.thumbnail %>'></a>
+      <a title='<%- post.title %>' href='<%- url_for_lang(post.link || post.path) %>'><img class='thumbnail' src='<%- post.thumbnail %>'></a>
     <% } %>
     <div class="meta" id="header-meta">
       <% if((topMetas).indexOf('title') > -1){ %>

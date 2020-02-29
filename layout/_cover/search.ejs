@@ -1,5 +1,14 @@
+<%
+function getURL(url) {
+  if (url.indexOf('://') < 0) {
+    return url_for_lang(url);
+  } else {
+    return url;
+  }
+}
+%>
 <% if (theme.cover.logo) { %>
-  <img class='logo' src='<%- url_for(theme.cover.logo) %>'/>
+  <img class='logo' src='<%- theme.cover.logo %>'/>
 <% } else { %>
   <p class="title <%- theme.backstretch && theme.backstretch.is_dark ? 'white' : '' %>"><%- theme.cover.title ? theme.cover.title : config.title %></p>
   <% if (theme.cover.subtitle) { %>
@@ -20,14 +29,14 @@
       <% (theme.cover.features || []).forEach(function(value){ %>
         <li>
           <a class="nav home <%- theme.backstretch && theme.backstretch.is_dark ? 'white' : '' %>"
-            href="<%= url_for(value.url) %>"
+            href="<%= getURL(value.url) %>"
             <% if (value.rel) { %>
               rel="<%- value.rel %>"
             <% } %>
             <% if (value.target) { %>
               target="<%- value.target %>"
             <% } %>
-            id="<%= url_for(value.url).replace(/\/|%/g, "")?url_for(value.url).replace(/\/|%/g, ""):"home" %>">
+            id="<%= getURL(value.url).replace(/\/|%/g, "")?getURL(value.url).replace(/\/|%/g, ""):"home" %>">
             <i class='<%= value.icon %> fa-fw'></i>&nbsp;<%= __('navbar.'+value.name) == ('navbar.'+value.name) ? value.name : __('navbar.'+value.name) %>
           </a>
         </li>
