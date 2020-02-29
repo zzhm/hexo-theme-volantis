@@ -1,15 +1,15 @@
 ############################### 主题基本信息 ###############################
 info:
   name: Volantis
-  version: 1.6
-  docs: https://xaoxuu.com/wiki/volantis/
+  version: 1.6.3
+  docs: https://volantis.js.org/
   cdn: # 要使用CDN，请在根目录的config文件中写上 use_cdn: true
     css:
-      style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.39/css/style.css
+      style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/css/style.css
     js:
-      app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.39/js/app.js
-      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.39/js/search.js
-      valine: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.39/js/valine.js
+      app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/app.js
+      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/search.js
+      valine: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/valine.js
 
 
 
@@ -18,31 +18,31 @@ info:
 # ⚠️ 注意：开启过多服务会导致网页加载缓慢、运行卡顿
 plugins:
   # jquery是很多功能的基础，请勿关闭
-  jquery: '//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js'
+  jquery: https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js
   ################################################## 提升速度类的服务
   # 鼠标放在链接上就提前开始加载了 [站内的url一定要以‘/’结尾]
-  instant_page: 'https://instant.page/3.0.0'
+  instant_page: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/instant_page.js
   ################################################## 优化体验类的服务
   # 图片放大预览
   fancybox:
-    css: '//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css'
-    js: '//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js'
+    css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css
+    js: https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js
   # 页面滚动显示动画
-  # scrollreveal: '//cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js'
+  scrollreveal: #https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js
   # 代码块复制按钮
-  # clipboard: '//cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js'
+  clipboard: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
   ################################################## 运维服务
   # 访问量统计【加载非常缓慢】
-  busuanzi: '//cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js'
+  busuanzi: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
   # 文章字数统计、阅读时长，开启需要安装插件: npm i --save hexo-wordcount
-  # wordcount: true
+  wordcount: #true
   ################################################## 美化类的服务
   # 按钮点击涟漪效果
-  # nodewaves:
-  #   css: '//cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css'
-  #   js: '//cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js'
+  nodewaves:
+    css: https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css
+    js: https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js
   # 文本框打字机特效
-  comment_typing: '//cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.39/js/comment_typing.js'
+  comment_typing: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/comment_typing.js
 
 
 
@@ -72,7 +72,7 @@ backstretch:
   enable: true          # 是否启用
   js: '//cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js'
   position: fixed       # cover: 封面背景   fixed: 整个网页背景
-  duration: 10000       # 持续时间（毫秒）
+  duration: 20000       # 持续时间（毫秒）
   fade: 2500            # 渐变（毫秒）
   is_dark: #true        # 图片是否是暗色的（调整文字为白色）
   images:               # 我上传了一些高清壁纸到CDN中，仅限个人使用，商用后果自负！！！
@@ -112,8 +112,8 @@ backstretch:
 #       icon: fas fa-play-circle
 #       url: examples/
 #     - name: 源码
-#       icon: fas fa-code-branch
-#       url: https://github.com/xaoxuu/hexo-theme-material-x/
+#       icon: fas fa-file-code
+#       url: https://github.com/xaoxuu/hexo-theme-volantis/
 #       rel: external nofollow noopener noreferrer
 #       target: _blank
 #     - name: 鸣谢
@@ -126,11 +126,11 @@ navbar:
   # 左侧logo区
   logo:
     # 显示图片，使用图片时将不会显示icon和title
-    img: # https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/favicon/apple-touch-icon.png
+    img:
     # 显示图标
-    icon: # fas fa-home
+    icon:
     # 显示标题
-    title: VOLANTIS
+    title:
   # logo后面的导航菜单
   menu:
     # 在桌面端显示的导航菜单
@@ -190,7 +190,7 @@ layout:
   # 文章列表（主页、自定义的列表）布局
   on_list:
     # 列表中每一篇文章的meta信息
-    meta: [title, author, date, top]
+    meta: [title, author, date, updated, top]
     # 列表类页面的侧边栏
     sidebar: [navigation, repos, qrcode]
   # 文章页面布局
@@ -202,7 +202,7 @@ layout:
     # 如果tags放置在meta.header中，那么在post列表中不显示（因为卡片下方已经有了）
     meta:
       header: [title, author, category, date, top]
-      footer: [links, tags]
+      footer: [btns, tags]
     # 文章页脚，自动在每一篇文章末尾添加
     footer: #[copyright, qrcode]
     # 文章页面的侧边栏
@@ -214,18 +214,20 @@ layout:
 meta:
   # 文章标题
   title: # 暂无配置
-  # 文章作者
+  # 默认文章作者（可在front-matter中覆盖）
   author:
-    icon: fas fa-user # 如果配置了头像，则不会显示图标
+    avatar: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png
+    name: Mr. X
+    url: https://xaoxuu.com
   # 文章创建日期
   date:
     icon: fas fa-edit
-    title: '消息发布于：'
+    title: '发布于：'
     format: 'll' # 日期格式 http://momentjs.com/docs/
   # 文章更新日期
   updated:
     icon: fas fa-save
-    title: '本页文档最后更新于：'
+    title: '更新于：'
     format: 'll' # 日期格式 http://momentjs.com/docs/
   # 文章分类
   category:
@@ -261,9 +263,13 @@ meta:
     #   name: QRcode
     #   img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qrcode.png
   # 链接
-  links:
+  btns:
+    edit:
+      icon: fas fa-edit
+      title: 在GitHub上编辑此页
+      color: '#888'
     repo: # 源码链接
-      icon: fas fa-code-branch
+      icon: fas fa-file-code
       title: 源码
       color: '#508EF2'
     bug: # BUG反馈链接
@@ -375,21 +381,26 @@ widget:
       icon: fas fa-map-signs
       title: 文档导航
     rows:
-      - name: 近期消息
-        icon: fas fa-bullhorn
-        url: /
-      - name: 消息归档
-        icon: fas fa-file-archive
-        url: news/archives/
       - name: 常见问题
         icon: fas fa-question-circle
         url: faqs/
       - name: 示例博客
         icon: fas fa-play-circle
         url: examples/
+      - name: 特别感谢
+        icon: fas fa-handshake
+        url: contributors/
+      - name: 历史事件
+        icon: fas fa-file-archive
+        url: news/archives/
+      - name: 主题源码
+        icon: fas fa-file-code
+        url: https://github.com/xaoxuu/hexo-theme-volantis/
+        rel: external nofollow noopener noreferrer
+        target: _blank
       - name: 更新日志
         icon: fas fa-clipboard-list
-        url: https://github.com/xaoxuu/hexo-theme-material-x/releases/
+        url: https://github.com/xaoxuu/hexo-theme-volantis/releases/
         rel: external nofollow noopener noreferrer
         target: _blank
   - id: repos
@@ -460,11 +471,11 @@ aplayer:
 #valine配置
 valine:
   enable: true # 如果你想用Valine评论系统，请设置enable为true
-  volantis: true # 是否启用volantis版本（禁止匿名，增加若干贴吧、QQ表情）
   # 还需要在根目录配置文件中添加下面这三行内容
   # leancloud:
   #   app_id: 你的appId
   #   app_key: 你的appKey
+  #   valine_path: 全站采用同一个path（共用同一个评论框数据）
   guest_info: nick,mail,link #valine comment header info
   placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )
   avatar: mp # gravatar style https://valine.js.org/avatar
@@ -473,6 +484,7 @@ valine:
   notify: true # valine mail notify (true/false)
   lang: zh-cn
   highlight: true
+  visitor: false # 阅读统计，按照官网文档接入了，但是依然不能用。
 
 # 搜索配置
 search:

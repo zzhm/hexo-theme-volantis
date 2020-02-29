@@ -189,8 +189,10 @@ var pjax = new Pjax({
     notify: notify,
     verify: verify,
     guest_info: guest_info,
-    <% if(page.valine && page.valine.path) { %>
+    <% if (page.valine && page.valine.path) { %>
       path: "<%= page.valine.path %>",
+    <% } else if (config.leancloud.valine_path) { %>
+      path: "<%= config.leancloud.valine_path %>",
     <% } %>
     appId: "<%= config.leancloud.app_id %>",
     appKey: "<%= config.leancloud.app_key %>",
@@ -198,6 +200,7 @@ var pjax = new Pjax({
     pageSize:'<%= theme.valine.pageSize %>',
     avatar:'<%= theme.valine.avatar %>',
     lang:'<%= theme.valine.lang %>',
+    visitor: '<%- theme.valine.visitor %>',
     highlight:'<%= theme.valine.highlight %>'
   })
   </script>
