@@ -1,15 +1,15 @@
 ############################### 主题基本信息 ###############################
 info:
   name: Volantis
-  version: 1.6.3
+  version: 1.7.3
   docs: https://volantis.js.org/
   cdn: # 要使用CDN，请在根目录的config文件中写上 use_cdn: true
     css:
-      style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/css/style.css
+      style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/css/style.css
     js:
-      app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/app.js
-      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/search.js
-      valine: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/valine.js
+      app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/js/app.js
+      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/js/search.js
+      valine: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/js/valine.js
 
 
 
@@ -21,7 +21,7 @@ plugins:
   jquery: https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js
   ################################################## 提升速度类的服务
   # 鼠标放在链接上就提前开始加载了 [站内的url一定要以‘/’结尾]
-  instant_page: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/instant_page.js
+  instant_page: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/js/instant_page.js
   ################################################## 优化体验类的服务
   # 图片放大预览
   fancybox:
@@ -42,7 +42,7 @@ plugins:
     css: https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css
     js: https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js
   # 文本框打字机特效
-  comment_typing: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/comment_typing.js
+  comment_typing: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/js/comment_typing.js
 
 
 
@@ -99,7 +99,7 @@ backstretch:
 #   title: Volantis
 #   subtitle: 'A Wonderful Theme for Hexo 4.2+'
 #   logo: # assets/logo.png    # logo和title只显示一个，若同时设置，则只显示logo
-#   search: '搜索文档'
+#   search: '搜索一下'
 #   # 主页封面菜单
 #   features:
 #     - name: 公告
@@ -107,10 +107,10 @@ backstretch:
 #       url: /
 #     - name: 文档
 #       icon: fas fa-book
-#       url: getting-started/
+#       url: https://volantis.js.org/getting-started/
 #     - name: 示例
 #       icon: fas fa-play-circle
-#       url: examples/
+#       url: https://volantis.js.org/examples/
 #     - name: 源码
 #       icon: fas fa-file-code
 #       url: https://github.com/xaoxuu/hexo-theme-volantis/
@@ -118,7 +118,7 @@ backstretch:
 #       target: _blank
 #     - name: 鸣谢
 #       icon: fas fa-handshake
-#       url: contributors/
+#       url: https://volantis.js.org/contributors/
 
 
 # 导航栏
@@ -132,68 +132,62 @@ navbar:
     # 显示标题
     title:
   # logo后面的导航菜单
-  menu:
+  menu: # 下面的内容可以写在 `blog/source/_data/menu.yml` 中
     # 在桌面端显示的导航菜单
     on_desktop:
-      - name: 开始
-        icon: fas fa-flag
-        url: getting-started/
-      - name: 站点
-        icon: fas fa-globe-asia
-        url: site-settings/
-      - name: 主题
-        icon: fas fa-palette
-        url: theme-settings/
-      - name: 页面
-        icon: fas fa-file-alt
-        url: page-settings/
-      - name: 书写
-        icon: fas fa-pen-alt
-        url: tag-plugins/
-      - name: 进阶
-        icon: fas fa-flask
-        url: advanced-settings/
+      - name: 博客
+        icon: fas fa-rss
+        url: /
+      - name: 分类
+        icon: fas fa-folder-open
+        url: categories/
+      - name: 标签
+        icon: fas fa-tags
+        url: tags/
+      - name: 归档
+        icon: fas fa-archive
+        url: archives/
+      - name: 友链
+        icon: fas fa-link
+        url: friends/
+      - name: 关于
+        icon: fas fa-info-circle
+        url: about/
     # 手机端导航菜单（从右上角的按钮点击展开）
     on_mobile:
-      - name: 开始
-        icon: fas fa-flag
-        url: getting-started/
-      - name: 站点
-        icon: fas fa-globe-asia
-        url: site-settings/
-      - name: 主题
-        icon: fas fa-palette
-        url: theme-settings/
-      - name: 页面
-        icon: fas fa-file-alt
-        url: page-settings/
-      - name: 书写
-        icon: fas fa-pen-alt
-        url: tag-plugins/
-      - name: 进阶
-        icon: fas fa-flask
-        url: advanced-settings/
-      - name: 帮助
-        icon: fas fa-question-circle
-        url: faqs/
-      - name: 鸣谢
-        icon: fas fa-handshake
-        url: contributors/
-  search: 搜索文档   # 搜索框文字
+      - name: 博客
+        icon: fas fa-rss
+        url: /
+      - name: 分类
+        icon: fas fa-folder-open
+        url: categories/
+      - name: 标签
+        icon: fas fa-tags
+        url: tags/
+      - name: 归档
+        icon: fas fa-archive
+        url: archives/
+      - name: 友链
+        icon: fas fa-link
+        url: friends/
+      - name: 关于
+        icon: fas fa-info-circle
+        url: about/
+  search: 搜索一下   # 搜索框文字
 
 
 
 # 布局
-layout:
+layout: # 下面的内容可以写在 `blog/source/_data/layout.yml` 中
   # 文章列表多列布局
   multiple_columns: false # 部分浏览器不兼容，谨慎使用
   # 文章列表（主页、自定义的列表）布局
   on_list:
     # 列表中每一篇文章的meta信息
-    meta: [title, author, date, updated, top]
+    meta: [title, author, date, category, top]
     # 列表类页面的侧边栏
-    sidebar: [navigation, repos, qrcode]
-  # 文章页面布局
+    sidebar: [blogger, category, tagcloud, qrcode]
+  # 页面布局
   on_page:
     # 文章页面主体元素，你也可以在页面的Front-matter中设置
     body: [article, comments]
@@ -202,12 +196,14 @@ layout:
     # 如果tags放置在meta.header中，那么在post列表中不显示（因为卡片下方已经有了）
     meta:
       header: [title, author, category, date, top]
-      footer: [btns, tags]
-    # 文章页脚，自动在每一篇文章末尾添加
-    footer: #[copyright, qrcode]
+      footer: [updated, tags, btns, share]
     # 文章页面的侧边栏
-    sidebar: [navigation, repos, qrcode, toc]
-  # 其他的页面布局暂时等于文章列表
+    sidebar: [qrcode, toc]
+  # 文章布局，参数继承自 on_page
+  on_post:
+    # 文章页脚，自动在每一篇文章末尾添加
+    article_footer: [copyright, donate]
+  # 其他的页面布局暂时等于 on_list
 
 
 # meta库配置
@@ -253,15 +249,11 @@ meta:
     - id: qzone
       name: QQ空间
       img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png
-    # - id: qrcode # 当id为qrcode时需要安装插件  npm i -S hexo-helper-qrcode
-    #   name: 微信
-    #   img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png
     - id: weibo
       name: 微博
       img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png
     # - id: qrcode # 当id为qrcode时需要安装插件  npm i -S hexo-helper-qrcode
     #   name: QRcode
-    #   img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qrcode.png
   # 链接
   btns:
     edit:
@@ -294,10 +286,10 @@ meta:
       color: '#1BCDFC'
 
 # 组件库配置
-widget:
+widget: # 下面的内容可以写在 `blog/source/_data/widget.yml` 中
   # ---------------------------------------
   # 博主信息小部件配置
-  - id: blogger
+  blogger:
     class: blogger
     display: [desktop] # [desktop, mobile]
     avatar: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png
@@ -307,7 +299,7 @@ widget:
     social: true
   # ---------------------------------------
   # 目录小部件配置(仅在文章中有效)
-  - id: toc
+  toc:
     class: toc
     display: [desktop, mobile] # [desktop, mobile]
     header:
@@ -318,7 +310,7 @@ widget:
     max_depth: 5 # 由于宽度有限，主题没有针对所有层级进行布局优化，建议文章最多分为：H2/H3/H4/H5四个层级
   # ---------------------------------------
   # 文章分类小部件配置
-  - id: category
+  category:
     class: category
     display: [desktop] # [desktop, mobile]
     header:
@@ -327,7 +319,7 @@ widget:
       url: /blog/categories/
   # ---------------------------------------
   # 标签云小部件配置
-  - id: tagcloud
+  tagcloud:
     class: tagcloud
     display: [desktop] # [desktop, mobile]
     header:
@@ -341,15 +333,16 @@ widget:
     end_color: '#555'
   # ---------------------------------------
   # 相关文章小部件配置
-  - id: related_posts
+  related_posts:
     class: related_posts # 需要安装插件  npm i -S hexo-related-popular-posts
     display: [desktop, mobile] # [desktop, mobile]
     header:
       icon: fas fa-bookmark
       title: 相关文章
+    max_count: 5
   # ---------------------------------------
   # 版权说明小部件（仅用于文章中）
-  - id: copyright
+  copyright:
     class: copyright
     display: [desktop, mobile] # [desktop, mobile]
     blockquote: true # 是否把内容放到blockquote中
@@ -360,7 +353,7 @@ widget:
       - permalink
   # ---------------------------------------
   # 二维码小部件（可用于文章中的打赏，只显示图片，无其他功能）
-  - id: qrcode
+  qrcode:
     class: qrcode
     display: [desktop] # [desktop, mobile]
     header:
@@ -370,81 +363,67 @@ widget:
     fancybox: #true # 是否允许点击放大
     images:
       - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png
-  # ---------------------------------------
-  # ---------------------------------------
-  # ---------------------------------------
-  # 自定义组件，仿照如下写法
-  - id: navigation
-    class: grid
+  # 打赏
+  donate:
+    class: qrcode
     display: [desktop, mobile] # [desktop, mobile]
-    header:
-      icon: fas fa-map-signs
-      title: 文档导航
-    rows:
-      - name: 常见问题
-        icon: fas fa-question-circle
-        url: faqs/
-      - name: 示例博客
-        icon: fas fa-play-circle
-        url: examples/
-      - name: 特别感谢
-        icon: fas fa-handshake
-        url: contributors/
-      - name: 历史事件
-        icon: fas fa-file-archive
-        url: news/archives/
-      - name: 主题源码
-        icon: fas fa-file-code
-        url: https://github.com/xaoxuu/hexo-theme-volantis/
-        rel: external nofollow noopener noreferrer
-        target: _blank
-      - name: 更新日志
-        icon: fas fa-clipboard-list
-        url: https://github.com/xaoxuu/hexo-theme-volantis/releases/
-        rel: external nofollow noopener noreferrer
-        target: _blank
-  - id: repos
-    class: text
-    display: [desktop] # [desktop, mobile]
-    header:
-      icon: fab fa-github
-      title: 点个赞吧
-      url: https://github.com/xaoxuu/
-    content:
-      - '您的赞对我来说很重要，如果您喜欢本主题，希望能够给下面的项目点个赞来支持一下。'
-      - '[<img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/prohud/logo.png" height="50px">](https://github.com/xaoxuu/ProHUD)'
-      - '[<img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/valuex/logo.png" height="50px">](https://github.com/xaoxuu/ValueX)'
-      - '[<img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/inspire/logo.png" height="50px">](https://github.com/xaoxuu/Inspire)'
+    height: 64px  # 不设置则自动高度
+    fancybox: true # 是否允许点击放大
+    images:
+      - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png
+      - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png
 
 
-# 社交信息配置
-social:
-  - icon: fas fa-rss
-    url: atom.xml
-  - icon: fas fa-envelope
-    url: mailto:me@xaoxuu.com
-  - icon: fab fa-github
-    url: https://github.com/xaoxuu
-  - icon: fas fa-headphones-alt
-    url: https://music.163.com/#/user/home?id=63035382
+# 网站页脚
+footer:
+  # 网站页脚布局，默认支持 aplayer/social/license/info/copyright
+  layout: [aplayer, social, license, info, copyright]
+  # APlayer配置 https://github.com/metowolf/MetingJS
+  aplayer:
+    # 是否启用，注释此项则不加载服务
+    enable: true
+    # 必选参数
+    server: netease   # netease, tencent, kugou, xiami, baidu
+    type: playlist    # song, playlist, album, search, artist
+    id: 3175833810    # song id / playlist id / album id / search keyword
+    # 可选参数
+    fixed: false      # enable fixed mode
+    theme: '#1BCDFC'  # main color
+    autoplay: false   # audio autoplay
+    order: list       # player play order, values: 'list', 'random'
+    loop: all         # player loop play, values: 'all', 'one', 'none'
+    volume: 0.7       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
+    list_max_height: 340px # list max height
+    list_folded: true
+  # 社交信息配置
+  social:
+    - icon: fas fa-rss
+      url: atom.xml
+    - icon: fas fa-envelope
+      url: mailto:me@xaoxuu.com
+    - icon: fab fa-github
+      url: https://github.com/xaoxuu
+    - icon: fas fa-headphones-alt
+      url: https://music.163.com/#/user/home?id=63035382
+  copyright: '[Copyright © 2017-2020 Mr. X](https://xaoxuu.com)'
+  # 可自己增加任意属性，支持markdown，例如：br: '<br>'
+  br: '<br>'
 
-# APlayer配置 https://github.com/metowolf/MetingJS
-aplayer:
-  # 是否启用，注释此项则不加载服务
-  enable: true
-  # 必选参数
-  server: netease   # netease, tencent, kugou, xiami, baidu
-  type: playlist    # song, playlist, album, search, artist
-  id: 3175833810    # song id / playlist id / album id / search keyword
-  # 可选参数
-  fixed: false      # enable fixed mode
-  theme: '#1BCDFC'  # main color
-  autoplay: false   # audio autoplay
-  order: list       # player play order, values: 'list', 'random'
-  loop: all         # player loop play, values: 'all', 'one', 'none'
-  volume: 0.7       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
-  list_max_height: 340px # list max height
-  list_folded: true
+
+
+seo:
+  # 当文章front-matter中没有keywords时，使用tags作为keywords
+  use_tags_as_keywords: true
+  # 当文章front-matter中没有description时，使用摘要作为description
+  use_excerpt_as_description: true
+  robots:
+    home_first_page: index,follow
+    home_other_pages: noindex,follow
+    archive: noindex,follow
+    category: noindex,follow
+    tag: noindex,follow
+# 其它页面自己在front-matter中写
+
 
 ############################### 需要复制到根目录配置文件中 ###############################
 # 请复制到根目录配置文件！
