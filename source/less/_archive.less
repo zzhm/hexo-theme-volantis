@@ -77,7 +77,6 @@
     .all-tags {
       display: flex;
       flex-wrap: wrap;
-      align-items: flex-start;
       justify-content: flex-start;
       align-items: baseline;
       word-spacing: @gap/2;
@@ -86,7 +85,7 @@
         color: fade(@color_text_main, 80%);
         margin-right: @gap;
         &:hover,&:active,&.active{
-          color: @color_text_highlight;
+          color: @color_text_highlight !important;
         }
       }
     }

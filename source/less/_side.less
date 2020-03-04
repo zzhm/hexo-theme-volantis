@@ -74,7 +74,7 @@
         display: flex;
         justify-content: space-between;
         align-content: center;
-        border-left: 4px solid transparent;
+        border-left: 2px solid transparent;
         .enable-trans();
       }
     }
@@ -92,11 +92,11 @@
           color: fade(@color_text_main, 70%);
         }
         &:hover{
-          border-left: 4px solid @theme_main;
+          border-left: @border_radius_line solid @theme_main;
           background: fade(@theme_main, 10%);
         }
         &.active{
-          border-left: 4px solid @theme_main;
+          border-left: @border_radius_line solid @theme_main;
           .name{
             color: @theme_main;
           }
@@ -105,7 +105,7 @@
           }
         }
         &:active{
-          border-left: 8px solid @theme_main;
+          border-left: 2*@border_radius_line solid @theme_main;
         }
         &.child{
           padding-left: @gap*2;

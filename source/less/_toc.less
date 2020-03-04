@@ -15,16 +15,17 @@
     max-height: ~"calc(100vh - 5 * @{gap} - @{height_navbar})";;
     overflow: auto;
     a {
-      border-left: 4px solid transparent;
+      border-left: 2px solid transparent;
       &:hover{
+        border-left: @border_radius_line solid @theme_main;
         background: fade(@theme_main, 10%);
       }
       &:active{
-        border-left: 8px solid @theme_main;
+        border-left: 2*@border_radius_line solid @theme_main;
       }
       &.active{
         color: @theme_main;
-        border-left: 4px solid @theme_main;
+        border-left: @border_radius_line solid @theme_main;
       }
     }
   }
