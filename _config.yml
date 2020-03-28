@@ -463,7 +463,7 @@ plugins:
     list_max_height: 340px # list max height
     list_folded: true
 
-
+cnzz: true
 ############################### Comments ###############################
 comments:
   title: <i class='fas fa-comments'></i> 评论
