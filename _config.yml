@@ -88,27 +88,27 @@ cover:
     archive: true
     others: false # can be written in front-matter 'cover: true'
   logo: # https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/256/google_logo.png
-  title: Volantis
-  subtitle: 'A Wonderful Theme for Hexo'
+  title: ZYMIN
+  subtitle: '一个分享知识的网站'
   search: # search bar placeholder
   features:
-    - name: 文档
+    - name: 生活
       icon: fas fa-book
-      url: https://volantis.js.org/getting-started/
-    - name: 博文
+      url: categories/生活/
+    - name: 学习
       icon: fas fa-rss
-      url: https://volantis.js.org/archives/
-    - name: 示例
+      url: categories/学习/
+    - name: 科研
       icon: fas fa-play-circle
-      url: https://volantis.js.org/examples/
-    - name: 源码
+      url: categories/科研/
+    - name: 育儿
       icon: fas fa-file-code
-      url: https://github.com/xaoxuu/hexo-theme-volantis/
+      url: categories/育儿/
       rel: external nofollow noopener noreferrer
       target: _blank
-    - name: 鸣谢
+    - name: 全能搜
       icon: fas fa-handshake
-      url: https://volantis.js.org/contributors/
+      url: https://zymin.cn/nav/
 
 
 # Navigation Bar
@@ -116,13 +116,13 @@ navbar:
   logo: # choose [img] or [icon + title]
     img:
     icon:
-    title:
+    title: ZYMIN
   menu:
     # The following can be written in `blog/source/_data/menu.yml`
     # This menu will be displayed on the laptop or desktop.
     on_desktop:
-      - name: 博客
-        icon: fas fa-rss
+      - name: 主页
+        icon: fas fa-home
         url: /
       - name: 分类
         icon: fas fa-folder-open
@@ -141,8 +141,8 @@ navbar:
         url: about/
     # This menu will be displayed on the mobile.
     on_mobile:
-      - name: 博客
-        icon: fas fa-rss
+      - name: 主页
+        icon: fas fa-home
         url: /
       - name: 分类
         icon: fas fa-folder-open
@@ -168,7 +168,7 @@ layout:
   # 文章列表（主页、自定义的列表）布局
   on_list:
     # 列表中每一篇文章的meta信息
-    meta: [title, author, category, date, wordcount, top]
+    meta: [title, author, date, category, top]
     # 列表类页面的侧边栏
     sidebar: [blogger, category, tagcloud, qrcode]
     # read more button
@@ -188,7 +188,7 @@ layout:
   # 文章布局，参数继承自 on_page
   on_post:
     # 文章页脚，自动在每一篇文章末尾添加
-    article_footer: [copyright, donate]
+    article_footer: [donate]
   # 其他的页面布局暂时等于 on_list
 
 
@@ -198,9 +198,9 @@ meta:
   title: # 暂无配置
   # 默认文章作者（可在front-matter中覆盖）
   author:
-    avatar: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png
-    name: Mr. X
-    url: https://xaoxuu.com
+    avatar: /img/avatar.png
+    name: ZYMIN
+    url: https://zymin.cn
   # 文章创建日期
   date:
     icon: fas fa-calendar-alt
@@ -276,7 +276,7 @@ widget:
   blogger:
     class: blogger
     display: [desktop] # [desktop, mobile]
-    avatar: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png
+    avatar: /img/avatar.png
     title:
     subtitle:
     jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
@@ -336,14 +336,14 @@ widget:
       - permalink
   # ---------------------------------------
   # qrcode widget
-  donate:
-    class: qrcode
-    display: [desktop, mobile] # [desktop, mobile]
-    height: 64px  # Automatic height if not set
-    fancybox: true
-    images:
-      - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png
-      - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png
+  # donate:
+    # class: qrcode
+    # display: [desktop, mobile] # [desktop, mobile]
+    # height: 64px  # Automatic height if not set
+    # fancybox: true
+    # images:
+      # - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png
+      # - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png
   # You can add your own widget here or 'blog/source/_data/widget.yml'
   # class: text, list, grid, qrcode, page, ... see more at https://volantis.js.org/
 
@@ -353,15 +353,15 @@ footer:
   # layout of footer: [aplayer, social, license, info, copyright]
   layout: [aplayer, social, license, info, copyright]
   social:
-    - icon: fas fa-rss
-      url: atom.xml
+    # - icon: fas fa-rss
+      # url: atom.xml
     - icon: fas fa-envelope
-      url: mailto:me@xaoxuu.com
-    - icon: fab fa-github
-      url: https://github.com/xaoxuu
+      url: mailto:1808525162@qq.com
+    # - icon: fab fa-github
+      # url: https://github.com/xaoxuu
     - icon: fas fa-headphones-alt
-      url: https://music.163.com/#/user/home?id=63035382
-  copyright: '[Copyright © 2017-2020 Mr. X](https://xaoxuu.com)'
+      url: https://music.163.com/#/user/home?id=1546778263
+  copyright: '[Copyright © 2017-2020 ZYMIN](https://zymin.cn)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 
@@ -464,16 +464,14 @@ plugins:
     list_folded: true
 
 
-
-
 ############################### Comments ###############################
 comments:
   title: <i class='fas fa-comments'></i> 评论
   subtitle:
   service: valine # valine, disqus, gitalk, livere
   valine:
-    appId: # your appId
-    appKey: # your appKey
+    app_id: yful60yYmA2c5TtXIETywL2a-gzGzoHsz # 必填
+    app_key: Jzc4LfsMLg0jmm9ymfL9MH2j # 必填
     js: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.2.0/js/valine.js
     path: # All pages use the same path (share the same comments data)
     meta: nick,mail,link #valine comment header info
